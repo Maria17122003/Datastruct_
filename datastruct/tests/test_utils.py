@@ -1,10 +1,12 @@
 import unittest
-from datastruct.datastruct.utils import Stack
+
+from utils import Stack
 
 stack = Stack()
 stack.push("data1")
 stack.push("data2")
 stack.push("data3")
+data = stack.pop()
 
 
 class Testutils(unittest.TestCase):
@@ -13,4 +15,10 @@ class Testutils(unittest.TestCase):
         """
         Тест push
         """
-        self.assertEqual(stack.top.data, "data3")
+        self.assertEqual(stack.top.data, "data2")
+
+    def test_pop(self):
+        """
+        Тест pop
+        """
+        self.assertEqual(data, "data3")

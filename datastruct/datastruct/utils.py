@@ -32,3 +32,14 @@ class Stack:
         next_node = Node(data)
         next_node.next = self.top
         self.top = next_node
+
+    def pop(self):
+        """
+        Удаляет из стека
+        верхний элемент,
+        возвращает данные удаленного
+        экземпляра класса Node
+        """
+        remove = self.top
+        self.top = self.top.next
+        return remove.data
