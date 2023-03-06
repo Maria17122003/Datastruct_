@@ -1,6 +1,5 @@
 import unittest
-
-from utils import Stack
+from datastruct.datastruct.utils import Stack
 
 stack = Stack()
 stack.push("data1")
