@@ -40,6 +40,9 @@ class Stack:
         возвращает данные удаленного
         экземпляра класса Node
         """
-        remove = self.top
-        self.top = self.top.next
-        return remove.data
+        if self.top is None:
+            return 'Нет элементов'
+        else:
+            remove = self.top
+            self.top = self.top.next
+            return remove.data
