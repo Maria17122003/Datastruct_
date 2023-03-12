@@ -16,7 +16,7 @@ class Testutils(unittest.TestCase):
 
     def test_dequeue(self):
         """
-        Тест enqueue
+        Тест dequeue
         """
         queue1 = Queue()
         queue1.enqueue('data1')
