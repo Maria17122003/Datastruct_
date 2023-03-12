@@ -8,7 +8,7 @@ class Node:
         ссылка на следующий узел
         """
         self.data = data
-        self.next = None
+        self.next_node = None
 
 
 class Queue:
@@ -26,10 +26,22 @@ class Queue:
         Добавляет данные
         в очередь
         """
-        new_node = Node(data=value)
+        next_node = Node(data=value)
         if self.head is None:
-            self.head = new_node
-            self.tail = new_node
+            self.head = next_node
+            self.tail = next_node
         else:
-            self.tail.next_node = new_node
-            self.tail = new_node
+            self.tail.next_node = next_node
+            self.tail = next_node
+
+    def dequeue(self):
+        """
+        Удаляет из очереди
+        крайний левый элемент
+        """
+        if self.head is None:
+            return None
+        else:
+            dequeue_element = self.head
+            self.head = self.head.next_node
+            return dequeue_element.data
