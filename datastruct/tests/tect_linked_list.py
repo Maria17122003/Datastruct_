@@ -19,3 +19,15 @@ class Testutils(unittest.TestCase):
         ll = LinkedList()
         self.assertEqual(ll.insert_at_end({'id': 2}), None)
         self.assertEqual(ll.insert_at_end({'id': 3}), None)
+        
+    def test_print_ll(self):
+        """
+        Тест insert_at_end
+        """
+        ll = LinkedList()
+        ll.insert_beginning({'id': 1})
+        ll.insert_at_end({'id': 2})
+        ll.insert_at_end({'id': 3})
+        ll.insert_beginning({'id': 0})
+        self.assertEqual(ll.print_ll(), print("{'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None"))
+
