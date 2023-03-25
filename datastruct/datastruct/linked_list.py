@@ -60,3 +60,15 @@ class LinkedList:
 
         ll_string += ' None'
         print(ll_string)
+        
+    def to_list(self):
+        """
+        Возвращает список с данными,
+        содержащимися в односвязном списке
+        """
+        node = self.head
+        while node:
+            self.list.append(node.data)
+            node = node.next_node
+
+        return self.list
