@@ -20,6 +20,7 @@ class LinkedList:
         """
         self.head = head
         self.tail = tail
+        self.list = []
 
     def insert_beginning(self, data):
         """
@@ -60,3 +61,25 @@ class LinkedList:
 
         ll_string += ' None'
         print(ll_string)
+
+    def to_list(self):
+        """
+        Возвращает список с данными,
+        содержащимися в односвязном списке
+        """
+        node = self.head
+        while node:
+            self.list.append(node.data)
+            node = node.next_node
+
+        return self.list
+
+    def get_data_by_id(self, id_list):
+        try:
+            ll_list = self.to_list()
+            for item in ll_list:
+                if item['id'] == id_list:
+                    return item
+            raise TypeError
+        except TypeError:
+            return "Данные не являются словарем или в словаре нет id"
