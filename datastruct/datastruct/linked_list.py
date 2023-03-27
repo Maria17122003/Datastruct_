@@ -72,3 +72,17 @@ class LinkedList:
             node = node.next_node
 
         return self.list
+    
+    def get_data_by_id(self, id_list):
+        """
+        Возвращает первый найденный 
+        в списке словарь с ключом id
+        """
+        try:
+            ll_list = self.to_list()
+            for item in ll_list:
+                if item['id'] == id_list:
+                    return item
+            raise TypeError
+        except TypeError:
+            return "Данные не являются словарем или в словаре нет id"
